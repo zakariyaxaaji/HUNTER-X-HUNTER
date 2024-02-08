@@ -26,6 +26,15 @@
 nav {
   text-align: center;
 }
+nav > img {
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+}
+
+nav > img:hover {
+  transform: rotateX(180deg);
+}
 .search {
   font-family: Hoover;
   display: flex;
@@ -34,6 +43,6 @@ nav {
   gap: 0.2rem;
   margin: 1rem;
 }
-.search>input{
+.search > input {
   border-color: green;
 }
