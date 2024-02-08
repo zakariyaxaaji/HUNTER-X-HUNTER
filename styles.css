@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+@font-face {
+  font-family: Hoover;
+  src: url(fonts/Hoover_Complete/Hoover_Complete/Fonts/OTF/Hoover-Medium.otf);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  text-align: center;
+  gap: 1rem;
+  font-family: Hoover;
+}
+.card {
+  height: 350px;
+  border: 1px solid green;
+}
+.card > img {
+  height: 250px;
+}
+nav {
+  text-align: center;
+}
+.search {
+  font-family: Hoover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  margin: 1rem;
+}
+.search>input{
+  border-color: green;
+}
