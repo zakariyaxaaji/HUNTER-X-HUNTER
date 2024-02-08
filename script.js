@@ -21,7 +21,7 @@ const api_key =
 async function fetchData(baseURL, api_key) {
   // async function returns a promise
   const response = await fetch(
-    `${baseURL}/api/v1/characters?api_key=${api_key}`
+    `${baseURL}/api/v1/characters?api_key=${api_key}&page=1&limit=24`
   );
   const data = await response.json(); //data is an object
   const results = data.data; // results is an Array of objects
@@ -42,21 +42,21 @@ async function fetchData(baseURL, api_key) {
     return character;
   });
   createCard(ArrayOfCharacters);
-  return ArrayOfCharacters
+  return ArrayOfCharacters;
 }
-fetchData(baseURL, api_key)
+fetchData(baseURL, api_key);
 
 const cards = document.querySelector(".cards");
 function createCard(array) {
-  const elements =[]
+  const elements = [];
   const htmlString = array
-    .map((arr) => {
+    .map((arr, index) => {
       return `<li class="card">
       <img
         src="${arr.img}"
         alt="image of ${arr.name} "
       />
-      <h2 class ="name">${arr.name}</h2>
+      <h2 class ="name">${index + 1}. ${arr.name}</h2>
       <p>
         Gender: ${arr.gender} <br />
         Nen-typ: ${arr.nen_type} <br />
@@ -64,11 +64,11 @@ function createCard(array) {
     </li>`;
     })
     .join(" ");
-  
+
   cards.innerHTML = htmlString;
 }
 
-const searchBar = document.querySelector('#search')
-const searchGlass = document.querySelector('.search>img')
+const searchBar = document.querySelector("#search");
+const searchGlass = document.querySelector(".search>img");
 
-// the logic for a searchbar 
+// the logic for a searchbar
