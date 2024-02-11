@@ -59,7 +59,7 @@ function createCard(array) {
     element["li"] = el;
     name.textContent = `${index + 1}  ${element.name}`;
     gender.textContent = `Gender: ${element.gender}`;
-    nen.textContent = `Nen-type: ${element.name}`;
+    nen.textContent = `Nen-type: ${element.nen_type}`;
     img.setAttribute("src", element.img);
     img.setAttribute("alt", `this is an img of ${element.name}`);
 
@@ -71,6 +71,7 @@ function createCard(array) {
 //Search functionality
 searchInput.addEventListener("input", (e) => {
   const text = e.target.value.toLowerCase();
+  console.log(ArrayOfCharacters);
   ArrayOfCharacters.forEach((character) => {
     const isVisible =
       character.name.toLowerCase().includes(text) ||
