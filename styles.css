@@ -15,6 +15,7 @@
   text-align: center;
   gap: 1rem;
   font-family: Hoover;
+  padding: 1rem;
 }
 .card {
   height: 350px;
@@ -45,4 +46,7 @@ nav > img:hover {
 }
 .search > input {
   border-color: green;
+}
+.hide {
+  display: none;
 }
