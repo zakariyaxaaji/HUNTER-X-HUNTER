@@ -1,3 +1,4 @@
+//generating an API key from HUNTER X HUNTER API
 // const personalInfo = {
 //   email: "yourEmail@gmail.com",
 //   name: "your name",
@@ -23,6 +24,8 @@ const cards = document.querySelector(".cards");
 const temp = document.querySelector(".template");
 const content = temp.content;
 const searchInput = document.querySelector("#search");
+const nenFilter = document.querySelector("#nen_type");
+const logo = document.getElementById("logo");
 
 // Create helper funcitons below
 async function fetchData(baseURL, api_key) {
@@ -57,7 +60,7 @@ function createCard(array) {
     const nen = clone.querySelector(".nen");
 
     element["li"] = el;
-    name.textContent = `${index + 1}  ${element.name}`;
+    name.textContent = `${index + 1}.  ${element.name}`;
     gender.textContent = `Gender: ${element.gender}`;
     nen.textContent = `Nen-type: ${element.nen_type}`;
     img.setAttribute("src", element.img);
@@ -71,13 +74,28 @@ function createCard(array) {
 //Search functionality
 searchInput.addEventListener("input", (e) => {
   const text = e.target.value.toLowerCase();
-  console.log(ArrayOfCharacters);
   ArrayOfCharacters.forEach((character) => {
     const isVisible =
       character.name.toLowerCase().includes(text) ||
       character.nen_type.includes(text);
     character.li.classList.toggle("hide", !isVisible);
   });
+});
+// filter functionality
+nenFilter.addEventListener("change", (e) => {
+  const value = e.target.value.toLowerCase();
+  ArrayOfCharacters.forEach((character) => {
+    if (!character.nen_type.includes(value)) {
+      character.li.classList.add("hide");
+    } else {
+      character.li.classList.remove("hide");
+    }
+  });
+});
+
+//reset the page when logo is clicked
+logo.addEventListener("click", () => {
+  location.reload();
 });
 
 // Run functions below

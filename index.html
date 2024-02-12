@@ -9,22 +9,28 @@
   </head>
   <body>
     <nav>
-      <img src="images/hunter-x-hunter-logo-SVG.svg" alt=" logo" />
+      <img id="logo" src="images/hunter-x-hunter-logo-SVG.svg" alt="logo" />
     </nav>
     <div class="search">
-      <label for="search">Search</label>
-      <input type="search" id="search" />
-      <img src="images/icons8-search-26.svg" alt="search icon" />
+      <div class="search_container">
+        <label for="search">Search</label>
+        <input type="search" id="search" />
+        <img src="images/icons8-search-26.svg" alt="search icon" />
+      </div>
 
-      <label for="filter"> Filter</label>
-      <select name="filter" id="nen_type">
-        <option value="Specialization">Specialization</option>
-        <option value="Emission">Emission</option>
-        <option value="Manipulation">Manipulation</option>
-        <option value="Transmutation">Transmutation</option>
-        <option value="Conjuration">Conjuration</option>
-        <option value="Enhancement">Enhancement</option>
-      </select>
+      <div class="filter_container">
+        <label for="filter"> Filter</label>
+        <select name="filter" id="nen_type">
+          <option disabled selected value="">Select an option</option>
+          <option value="Specialization">Specialization</option>
+          <option value="Emission">Emission</option>
+          <option value="Manipulation">Manipulation</option>
+          <option value="Transmutation">Transmutation</option>
+          <option value="Conjuration">Conjuration</option>
+          <option value="Enhancement">Enhancement</option>
+          <option value="Unknown">Unknown</option>
+        </select>
+      </div>
     </div>
 
     <ul class="cards">
@@ -37,5 +43,11 @@
         </li>
       </template>
     </ul>
+    <footer>
+      <p>
+        Credit: This was buildt with the HUNTER X HUNTER API from
+        <a href="https://hxh-api.vercel.app/" target="_blank">HXH API</a>
+      </p>
+    </footer>
   </body>
 </html>
