@@ -1,10 +1,11 @@
 //generating an API key from HUNTER X HUNTER API
+
 // const personalInfo = {
-//   email: "yourEmail@gmail.com",
-//   name: "your name",
+//   email: "zakariyaxaaji@gmail.com",
+//   name: "zakariya xaaji",
 //   usage: "am trying to learn how to use APIs",
 // };
-// fetching to register sooo i can get API key
+// //fetching to register sooo i can get API key
 // fetch("https://hxh-api.onrender.com/api/v1/guest/register", {
 //   method: "POST",
 //   headers: {
@@ -30,7 +31,7 @@ const logo = document.getElementById("logo");
 // Create helper funcitons below
 async function fetchData(baseURL, api_key) {
   const response = await fetch(
-    `${baseURL}/api/v1/characters?api_key=${api_key}&page=1&limit=24`
+    `${baseURL}/api/v1/characters?api_key=${api_key}`
   );
   const data = await response.json(); //data is an object
   const results = data.data; // results is an Array of objects
